@@ -255,6 +255,7 @@ function handleChatGatewayEvent(host: GatewayHost, payload: ChatEventPayload | u
   if (state === "final" && shouldReloadHistoryForFinalEvent(payload)) {
     void loadChatHistory(host as unknown as OpenClawApp);
   }
+  (host as OpenClawApp).requestUpdate();
 }
 
 function handleGatewayEventUnsafe(host: GatewayHost, evt: GatewayEventFrame) {
